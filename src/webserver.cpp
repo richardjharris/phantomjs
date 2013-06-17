@@ -116,6 +116,9 @@ bool WebServer::listenOnPort(const QString& port, const QVariantMap& opts)
     if (opts.value("keepAlive", false).toBool()) {
         options << "enable_keep_alive" << "yes";
     }
+    if (opts.contains("numThreads")) {
+        options << "num_threads" << opts.value("numThreads").toString().toAscii().constData();
+    }
     options << NULL;
 
     // Start the server
