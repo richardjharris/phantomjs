@@ -77,6 +77,7 @@ public:
     void setMaxAuthAttempts(int maxAttempts);
     void setResourceTimeout(int resourceTimeout);
     void setCustomHeaders(const QVariantMap &headers);
+    void setProxy(const QNetworkProxy &proxy);
     QVariantMap customHeaders() const;
 
     void setCookieJar(QNetworkCookieJar *cookieJar);

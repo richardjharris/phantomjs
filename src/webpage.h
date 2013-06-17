@@ -238,6 +238,7 @@ public slots:
     void close();
 
     QVariant evaluateJavaScript(const QString &code);
+    void setProxy(const QString &host, const int port, bool isSocks);
     bool render(const QString &fileName, const QVariantMap &map = QVariantMap());
     /**
      * Render the page as base-64 encoded string.

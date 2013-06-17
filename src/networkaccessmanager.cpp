@@ -190,6 +190,10 @@ QVariantMap NetworkAccessManager::customHeaders() const
     return m_customHeaders;
 }
 
+void NetworkAccessManager::setProxy(const QNetworkProxy &proxy) {
+    QNetworkAccessManager::setProxy(proxy);
+}
+
 void NetworkAccessManager::setCookieJar(QNetworkCookieJar *cookieJar)
 {
     QNetworkAccessManager::setCookieJar(cookieJar);

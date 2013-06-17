@@ -687,6 +687,16 @@ QVariant WebPage::evaluateJavaScript(const QString &code)
     return evalResult;
 }
 
+void WebPage::setProxy(const QString &host, const int port, bool isSocks)
+{
+    QNetworkProxy proxy = QNetworkProxy(
+        (isSocks ? QNetworkProxy::Socks5Proxy : QNetworkProxy::HttpProxy),
+        host,
+        port
+    );
+    m_networkAccessManager->setProxy(proxy);
+}
+
 QString WebPage::filePicker(const QString &oldFile)
 {
     qDebug() << "WebPage - filePicker" << "- old file:" << oldFile;
